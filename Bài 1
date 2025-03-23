@@ -1,0 +1,69 @@
+//BÀI 1:Giới thiệU bản thân va tính chỉ số BMI
+
+#include <stdio.h>
+
+int main() {
+    
+//Viết chương trình nhập vào thông tin cá nhân bao gồm:
+
+    char name[50];//Tên có thể dài tối đa 50 ký tự
+    int age;//Tuổi là số nguyên
+    char favourite[50];//Sở thích có thể dài tối đa 50 ký tự
+    int day;//Ngày sinh 
+    int month;//Tháng sinh 
+    int year;//Năm sinh  
+    char phone[11];//Số điện thoại có tối đa 11 ký tự
+    char email[50];//Email có thể dài tối đa 50 ký tự
+    float weight, height, bmi;//Cân nặng, chiều cao và chỉ số BMI
+
+    // Nhập tên
+    printf("Nhap ten cua ban: ");
+    gets(name);// Hàm gets() để nhập chuỗi ký tự
+
+    
+    // Nhập sở thích
+    printf("Nhap so thich cua ban: ");
+    gets(favourite);// Hàm gets() để nhập chuỗi ký tự
+
+    // Nhập tuổi
+    printf("Nhap tuoi cua ban: ");
+    scanf("%d", &age);
+
+    // Nhập ngày sinh tháng năm sinh
+    printf("Nhap ngay sinh cua ban (dd): ");
+    scanf("%d", &day);
+    printf("Nhap thang sinh cua ban (mm): ");
+    scanf("%d", &month);
+    printf("Nhap nam sinh cua ban (yyyy): ");
+    scanf("%d", &year);
+
+    // Nhập số điện thoại
+    printf("Nhap so dien thoai cua ban: ");
+    scanf("%s", phone);
+
+    // Nhập email
+    printf("Nhap email cua ban: ");
+    scanf("%s", email);
+
+    // Nhập cân nặng
+    printf("Nhap can nang cua ban (kg): ");
+    scanf("%f", &weight);
+
+    // Nhập chiều cao
+    printf("Nhap chieu cao cua ban (m): ");
+    scanf("%f", &height);
+
+    // Tính toán chỉ số BMI
+    bmi = weight / (height * height); //Chỉ số BMI = cân nặng / (chiều cao * chiều cao)
+
+    // Hiển thị profile và chỉ số BMI
+    printf("Ten: %s\n", name);
+    printf("So thich: %s\n", favourite);
+    printf("Tuoi: %d\n", age);
+    printf("Ngay sinh: %2d/%2d/%4d\n", day, month, year);
+    printf("So dien thoai: %s\n", phone);
+    printf("Email: %s\n", email);
+    printf("Chi so BMI: %.2f\n", bmi);// Hiển thị chỉ số BMI với 2 chữ số thập phân
+
+    return 0;
+}
