@@ -1,0 +1,23 @@
+//BÀI 2: So sánh 2 số nguyên sử dụng if/else
+#include<stdio.h>
+
+int main() {
+    long long int num1, num2;// Khai báo hai biến số nguyên lớn kiểu long long int để lưu giá trị nhập vào
+    // Nhập số thứ nhất
+    printf("Enter numbers 1: ");
+    scanf("%lld", &num1);// Sử dụng %lld để nhập long long int
+    // Nhập số thứ hai
+    printf("Enter numbers 2: ");
+    scanf("%lld", &num2);
+    if(num1 > num2) {// Sử dụng if else để so sánh 2 số
+        printf("Number 1 is higher than number 2\n");
+        printf("Because %lld > %lld\n", num1, num2);// In ra số 1 lớn hơn số 2
+    } else if (num1 < num2) {// Nếu số 1 nhỏ hơn số 2
+        printf("number 1 is lower than number 2\n");
+        printf("Because %lld < %lld\n", num1, num2);// In ra số 1 nhỏ hơn số 2
+    } else { (num1 == num2);// Nếu số 1 bằng số 2
+        printf("number 1 is equal to number 2\n");
+        printf("Because %lld = %lld\n", num1, num2);// In ra số 1 bằng số 2
+    }
+    return 0;
+}
