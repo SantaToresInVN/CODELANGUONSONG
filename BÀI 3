@@ -19,7 +19,7 @@ int nhapSoDuong() {
 }
 int main() {
 
-    int soDuong = nhapSoDuong();
+    int soDuong = nhapSoDuong();// Gọi hàm nhapSoDuong() để nhập số dương
     printf("Ban da nhap so duong hop le: %d\n", soDuong);
     if (soDuong % 2 == 0) {// Số chẵn là số chia hết cho 2
         printf("So %d la so chan\n", soDuong);
