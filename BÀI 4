@@ -2,12 +2,14 @@
 // Viết chương trình nhập vào 2 số nguyên từ bàn phím. Tìm số lớn nhất trong 2 số đó.
 // Sử dụng hàm không trả về giá trị để in ra thông điệp chào mừng.
 // Sử dụng hàm trả về giá trị để tìm số lớn nhất trong 2 số.
-// Hàm không trả về giá trị để in ra thông điệp chào mừng.
 
 #include <stdio.h>
 
 // No return function: In thong diep chao mung
-void printMessage() {
+void printMessage() {// Hàm không trả về giá trị để in thông điệp chào mừng
+//Hàm không trả về giá trị là hàm không cần trả về giá trị sau khi thực thi xong.
+//Ví dụ: in ra thông điệp chào mừng, hiển thị menu, v.v.
+
     printf("====================================\n");
     printf("Chao mung ban den voi chuong trinh \n");
     printf("         TIM SO LON NHAT\n");
@@ -17,15 +19,15 @@ void printMessage() {
 // Return function: Tra ve so lon nhat trong hai so
 int findMax(int a, int b) {// Hàm trả về số lớn nhất trong 2 số
     return (a > b) ? a : b;// Nếu a lớn hơn b thì trả về a, ngược lại trả về b
-    // return 0;
+    //Đây là một biểu thức sử dụng toán tử ba ngôi (ternary operator) trong C.(Ngắn gọn - dễ đọc)
+
 }
 
 int main() {
     int num1, num2, max;// Khai báo biến num1, num2, max kiểu số nguyên
     char choice;// Khai báo biến choice kiểu ký tự
     do{
-    // Goi ham khong co gia tri tra ve
-    printMessage();
+    printMessage();// Gọi hàm printMessage() để in thông điệp chào mừng
     do {
         // Nhap hai so tu ban phim
         printf("Nhap so thu nhat: ");
@@ -35,10 +37,16 @@ int main() {
 //Điều kiện != 1 kiểm tra xem việc nhập liệu có thành công hay không. Nếu không thành công, chương trình sẽ xử lý lỗi
             printf("Gia tri khong hop le. Vui long nhap lai ! \n");// In ra thông báo lỗi
             while (getchar() != '\n');// Xóa bộ nhớ đệm
+//Sử dụng để xóa tất cả các ký tự còn lại trong bộ đệm nhập, bao gồm cả ký tự xuống dòng \n.
+//Điều này giúp xóa bỏ các ký tự không hợp lệ và chuẩn bị cho lần nhập tiếp theo.
+//Hàm getchar() trả về ký tự tiếp theo trong bộ đệm nhập.
+//Vòng lặp while sẽ chạy cho đến khi bộ đệm nhập trống.
+//Khi bộ đệm nhập trống, người dùng có thể nhập giá trị mới mà không gặp lỗi.
         } else {// Nếu giá trị nhập vào là số nguyên
             break;// Thoát khỏi vòng lặp
         }
     } while (1);// Vòng lặp vô hạn
+//giữ cho chương trình lặp lại liên tục cho đến khi một điều kiện cụ thể được đáp ứng và vòng lặp bị thoát bằng lệnh break.
 
     do {
         printf("Nhap so thu hai: ");
