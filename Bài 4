@@ -1,0 +1,67 @@
+// BÀI 4 : Tìm số lớn nhất trong 2 số sử dụng hàm không trả về giá trị và hàm trả về giá trị
+// Viết chương trình nhập vào 2 số nguyên từ bàn phím. Tìm số lớn nhất trong 2 số đó.
+// Sử dụng hàm không trả về giá trị để in ra thông điệp chào mừng.
+// Sử dụng hàm trả về giá trị để tìm số lớn nhất trong 2 số.
+// Hàm không trả về giá trị để in ra thông điệp chào mừng.
+
+#include <stdio.h>
+
+// No return function: In thong diep chao mung
+void printMessage() {
+    printf("====================================\n");
+    printf("Chao mung ban den voi chuong trinh \n");
+    printf("         TIM SO LON NHAT\n");
+    printf("====================================\n");
+    printf("\n");
+}
+// Return function: Tra ve so lon nhat trong hai so
+int findMax(int a, int b) {// Hàm trả về số lớn nhất trong 2 số
+    return (a > b) ? a : b;// Nếu a lớn hơn b thì trả về a, ngược lại trả về b
+    // return 0;
+}
+
+int main() {
+    int num1, num2, max;// Khai báo biến num1, num2, max kiểu số nguyên
+    char choice;// Khai báo biến choice kiểu ký tự
+    do{
+    // Goi ham khong co gia tri tra ve
+    printMessage();
+    do {
+        // Nhap hai so tu ban phim
+        printf("Nhap so thu nhat: ");
+        if (scanf("%d", &num1) != 1) {// Nếu giá trị nhập vào không phải số nguyên
+            // Thông báo lỗi và yêu cầu nhập lại
+            printf("Gia tri khong hop le. Vui long nhap lai ! \n");// In ra thông báo lỗi
+            // Xóa bộ nhớ đệm
+            while (getchar() != '\n');// Xóa bộ nhớ đệm
+        } else {// Nếu giá trị nhập vào là số nguyên
+            break;// Thoát khỏi vòng lặp
+        }
+    } while (1);// Vòng lặp vô hạn
+
+    do {
+        printf("Nhap so thu hai: ");
+        if (scanf("%d", &num2) != 1) {
+            printf("Gia tri khong hop le. Vui long nhap lai ! \n");  
+            while (getchar() != '\n');
+        } else {
+            break;
+        }
+    } while (1);
+
+    // Goi ham co gia tri tra ve
+    max = findMax(num1, num2);// Gọi hàm findMax() để tìm số lớn nhất trong 2 số
+
+    // In ket qua
+    printf("So lon nhat la: %d\n", max);
+    
+    printf("Ban co muon tiep tuc khong (Y/N)? ");
+    scanf(" %c", &choice);//Nhap ky tu
+    while(getchar()!='\n');//xoa bo nho dem
+
+    } while (choice == 'Y' || choice == 'y');  // Nếu chọn 'Y' hoặc 'y' thì tiếp tục, ngược lại thoát
+
+    printf("Cam on ban da su dung truong chinh!\n");// In ra thông báo kết thúc nếu người dùng chọn 'N' hoặc 'n'
+
+    return 0;
+}
