@@ -29,10 +29,11 @@ int main() {
     do {
         // Nhap hai so tu ban phim
         printf("Nhap so thu nhat: ");
-        if (scanf("%d", &num1) != 1) {// Nếu giá trị nhập vào không phải số nguyên
-            // Thông báo lỗi và yêu cầu nhập lại
+        if (scanf("%d", &num1) != 1) {// Nếu giá trị nhập vào không phải số nguyên.Thông báo lỗi và yêu cầu nhập lại
+//Hàm scanf() trả về số lượng giá trị hợp lệ mà nó đọc được.
+//Nếu người dùng nhập một giá trị không phải số nguyên (ví dụ: chữ cái hoặc ký tự đặc biệt), scanf() sẽ trả về 0 hoặc giá trị khác 1.
+//Điều kiện != 1 kiểm tra xem việc nhập liệu có thành công hay không. Nếu không thành công, chương trình sẽ xử lý lỗi
             printf("Gia tri khong hop le. Vui long nhap lai ! \n");// In ra thông báo lỗi
-            // Xóa bộ nhớ đệm
             while (getchar() != '\n');// Xóa bộ nhớ đệm
         } else {// Nếu giá trị nhập vào là số nguyên
             break;// Thoát khỏi vòng lặp
@@ -58,10 +59,13 @@ int main() {
     printf("Ban co muon tiep tuc khong (Y/N)? ");
     scanf(" %c", &choice);//Nhap ky tu
     while(getchar()!='\n');//xoa bo nho dem
+//Khi sử dụng các hàm như scanf() để đọc dữ liệu, nếu người dùng nhập sai định dạng (ví dụ: nhập chữ thay vì số)
+//Các ký tự không hợp lệ sẽ vẫn còn trong bộ đệm nhập.
+//Nếu không xóa bộ đệm, các ký tự này có thể gây ra lỗi hoặc ảnh hưởng đến các lần nhập tiếp theo.
 
     } while (choice == 'Y' || choice == 'y');  // Nếu chọn 'Y' hoặc 'y' thì tiếp tục, ngược lại thoát
 
-    printf("Cam on ban da su dung truong chinh!\n");// In ra thông báo kết thúc nếu người dùng chọn 'N' hoặc 'n'
+    printf("Cam on ban da su dung chuong trinh!\n");// In ra thông báo kết thúc nếu người dùng chọn 'N' hoặc 'n'
 
     return 0;
 }
