@@ -1,0 +1,36 @@
+// BÀI 3:Nhập số dương và kiểm tra tính chẵn lẻ. Tính số từ 1 ->số Dương sử dụng vòng lặp for/do/while
+// Viết chương trình nhập vào một số dương từ bàn phím. Kiểm tra xem số đó là số chẵn hay số lẻ.
+// In ra m
+// Message thông báo số đó là số chẵn hay số lẻ.
+// Sử dụng vòng lặp for để in ra các số từ 1 đến số đó.
+// Yêu cầu nhập số dương nếu nhập số âm hoặc bằng 0 thì thông báo lỗi và yêu cầu nhập lại.
+#include <stdio.h>
+int nhapSoDuong() {
+    int number;
+    do {// Sử dụng vòng lặp do while để yêu cầu nhập lại nếu số nhập vào không hợp lệ
+        printf("Nhap so duong: ");
+        scanf("%d", &number);
+        if (number <= 0) {// Nếu số nhập vào không hợp lệ thì thông báo lỗi
+            printf("Gia tri ko hop le. Vui long nhap lai\n");
+        }
+    } while (number <= 0);// Số nhập vào phải lớn hơn 0
+    return number;// Trả về số nhập vào
+//     return 0;
+}
+int main() {
+
+    int soDuong = nhapSoDuong();
+    printf("Ban da nhap so duong hop le: %d\n", soDuong);
+    if (soDuong % 2 == 0) {// Số chẵn là số chia hết cho 2
+        printf("So %d la so chan\n", soDuong);
+    } else {// Ngược lại là số lẻ
+        printf("So %d la so le.\n", soDuong);
+    }
+
+    // Sử dụng vòng lặp for để in các số từ 1 đến soDuong
+    printf("Cac so tu 1 den %d la:\n", soDuong);
+    for (int i = 1; i <= soDuong;i++){ // Vòng lặp for từ 1 đến soDuong
+        printf("%d ", i);// In ra các số từ 1 đến soDuong
+    }
+    return 0;
+}
