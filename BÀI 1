@@ -1,5 +1,4 @@
 //BÀI 1:Giới thiệU bản thân va tính chỉ số BMI
-
 #include <stdio.h>
 
 int main() {
@@ -19,11 +18,13 @@ int main() {
     // Nhập tên
     printf("Nhap ten cua ban: ");
     gets(name);// Hàm gets() để nhập chuỗi ký tự
-
+    // Có thể nhập tên hoặc sở thích có nhiều từ.
+    //Cho phép nhập chuỗi dài hơn một từ
+    //Khi bạn cần nhập các thông tin như tên đầy đủ, sở thích, địa chỉ, v.v.
     
     // Nhập sở thích
     printf("Nhap so thich cua ban: ");
-    gets(favourite);// Hàm gets() để nhập chuỗi ký tự
+    gets(favourite);
 
     // Nhập tuổi
     printf("Nhap tuoi cua ban: ");
