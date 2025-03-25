@@ -1,6 +1,12 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdbool.h>
-#include <ctype.h>
-void nhapTenKH(char name[100]);
-bool checkDigitInStr(char name[100]);
+// functions.h
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+
+// Khai báo các hàm
+void Profile ();
+void kiemTraSoNguyenTo(int n);
+void inSoChan(int n);;
+int FindMin(int a, int b);
+void demSoChuCaiHoa(char str[]);
+
+#endif
