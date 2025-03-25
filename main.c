@@ -54,6 +54,7 @@ int main(void) {
         
         case 6:
             printf("Thoat chuong trinh.\n");
+            choice = 0; // Kết thúc chương trình 
             break;
 
         default:
